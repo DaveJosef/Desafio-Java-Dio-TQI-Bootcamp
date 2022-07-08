@@ -12,6 +12,8 @@ public abstract class Conta {
         this.numero = SEQUENCIAL++;
     }
 
+    public abstract void imprimirExtrato();
+
     @Override
     public String toString() {
         return String.valueOf(this.numero);

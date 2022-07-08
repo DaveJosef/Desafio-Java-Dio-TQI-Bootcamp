@@ -11,6 +11,6 @@ public class Main {
         Banco banco = new Banco();
         banco.setContas(contas);
 
-        banco.getContas().forEach(System.out::println);
+        banco.getContas().forEach(Conta::imprimirExtrato);
     }
 }
