@@ -3,8 +3,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Conta contaDeMaria = new ContaPoupanca();
-        Conta contaDeJoao = new ContaCorrente();
+        Cliente maria = new Cliente();
+        maria.setNome("Maria");
+        Cliente joao = new Cliente();
+        joao.setNome("Joao");
+
+        Conta contaDeMaria = new ContaPoupanca(maria);
+        Conta contaDeJoao = new ContaCorrente(joao);
 
         List<Conta> contas = new ArrayList<>(){{
             add(contaDeMaria);
