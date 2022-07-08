@@ -3,11 +3,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> clientes = new ArrayList<>(){{
-            add("Maria");
-            add("João");
+        List<Conta> contas = new ArrayList<>(){{
+            add(new Conta());
+            add(new Conta());
         }};
 
-        System.out.println(clientes);
+        System.out.println(contas);
     }
 }
