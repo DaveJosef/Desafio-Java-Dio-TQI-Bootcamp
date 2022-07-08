@@ -3,17 +3,17 @@ import java.util.List;
 
 public class Historico {
 
-    List<String> registros;
+    List<Registro> registros;
 
     public Historico() {
         registros = new LinkedList<>();
     }
 
-    public void registrar(String registro) {
+    public void registrar(Registro registro) {
         registros.add(registro);
     }
 
     public void visualizar() {
-        registros.forEach(System.out::println);
+        registros.forEach(IRegistro::verDetalhes);
     }
 }

@@ -9,4 +9,6 @@ public interface IConta {
     void imprimirExtrato();
 
     void visualizarHistorico();
+
+    String getNomeDoCliente();
 }
