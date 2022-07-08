@@ -8,6 +8,9 @@ public class Main {
             add(new Conta());
         }};
 
-        System.out.println(contas);
+        Banco banco = new Banco();
+        banco.setContas(contas);
+
+        System.out.println(banco.getContas());
     }
 }
