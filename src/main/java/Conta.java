@@ -1,3 +1,5 @@
+import lombok.Getter;
+
 import java.time.Instant;
 import java.util.Date;
 
@@ -6,8 +8,11 @@ public abstract class Conta implements IConta {
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
+    @Getter
     protected int numero;
+    @Getter
     protected int agencia;
+    @Getter
     protected double saldo;
     protected Cliente cliente;
     protected Historico historico;
@@ -39,18 +44,6 @@ public abstract class Conta implements IConta {
         contaDestino.depositar(valor);
         Registro registro = new Transferencia(Date.from(Instant.now()), valor, this, contaDestino);
         historico.registrar(registro);
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     @Override
