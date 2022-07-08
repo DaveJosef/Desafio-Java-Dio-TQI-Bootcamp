@@ -12,7 +12,32 @@ public abstract class Conta {
         this.numero = SEQUENCIAL++;
     }
 
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
+
+    public void depositar(double valor) {
+        saldo += valor;
+    }
+
+    public void transferir(double valor, Conta contaDestino) {
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
+
     public abstract void imprimirExtrato();
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
 
     @Override
     public String toString() {
