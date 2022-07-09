@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.Date;
 
 public class Saque extends Registro {
@@ -13,7 +15,9 @@ public class Saque extends Registro {
     }
 
     @Override
-    public String getStringIcon() {
-        return " -> ";
+    public JComponent getIconComponent() {
+        JLabel label = new JLabel(" -> ");
+        label.setFont(new Font("Arial", Font.BOLD, 18));
+        return label;
     }
 }

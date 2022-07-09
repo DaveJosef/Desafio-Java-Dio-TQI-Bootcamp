@@ -11,8 +11,11 @@ public class RegistroComp extends BancoComp {
 
     @Override
     public JComponent getComponente() {
-        JLabel componente = new JLabel(registro.getStringIcon() + String.format("%.2f", registro.getValor()));
-        componente.setFont(new Font("Arial", Font.BOLD, 18));
+        JComponent componente = new JPanel();
+        componente.add(registro.getIconComponent());
+        JLabel label = new JLabel(String.format("%.2f", registro.getValor()));
+        label.setFont(new Font("Arial", Font.BOLD, 18));
+        componente.add(label);
         return componente;
     }
 }

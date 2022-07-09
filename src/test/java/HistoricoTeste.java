@@ -15,6 +15,6 @@ public class HistoricoTeste {
         LinkedList<Object> expected = new LinkedList<>() {{
             add(saque);
         }};
-        Assert.assertArrayEquals(expected.toArray(), historico.registros.toArray());
+        Assert.assertArrayEquals(expected.toArray(), historico.getRegistros().toArray());
     }
 }

@@ -1,26 +1,27 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.Date;
 
 public class Transferencia extends Registro {
 
-    private IConta contaOrigem;
     private IConta contaDestino;
 
-    public Transferencia(Date momento, double valor, IConta contaOrigem, IConta contaDestino) {
+    public Transferencia(Date momento, double valor, IConta contaDestino) {
         super(momento, valor);
-        this.contaOrigem = contaOrigem;
         this.contaDestino = contaDestino;
     }
 
     @Override
     public void verDetalhes() {
         System.out.println(" >> Transferência:");
-        System.out.println(String.format("Conta origem: %s", contaOrigem.getNomeDoCliente()));
         System.out.println(String.format("Conta destino: %s", contaDestino.getNomeDoCliente()));
         super.verDetalhesComuns();
     }
 
     @Override
-    public String getStringIcon() {
-        return " >> ";
+    public JComponent getIconComponent() {
+        JLabel label = new JLabel(" >> ");
+        label.setFont(new Font("Arial", Font.BOLD, 18));
+        return label;
     }
 }

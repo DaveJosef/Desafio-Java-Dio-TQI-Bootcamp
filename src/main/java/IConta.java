@@ -6,6 +6,8 @@ public interface IConta {
 
     void transferir(double valor, IConta contaDestino);
 
+    void receber(double valor, IConta contaOrigem);
+
     void imprimirExtrato();
 
     void visualizarHistorico();

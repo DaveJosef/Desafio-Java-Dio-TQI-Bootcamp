@@ -41,10 +41,25 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, IConta contaDestino) {
-        this.sacar(valor);
-        contaDestino.depositar(valor);
-        Registro registro = new Transferencia(Date.from(Instant.now()), valor, this, contaDestino);
+        this.diminuirSaldo(valor);
+        contaDestino.receber(valor, this);
+        Registro registro = new Transferencia(Date.from(Instant.now()), valor, contaDestino);
         historico.registrar(registro);
+    }
+
+    @Override
+    public void receber(double valor, IConta contaOrigem) {
+        this.aumentarSaldo(valor);
+        Registro registro = new Recebimento(Date.from(Instant.now()), valor, contaOrigem);
+        historico.registrar(registro);
+    }
+
+    private void aumentarSaldo(double valor) {
+        this.saldo += valor;
+    }
+
+    private void diminuirSaldo(double valor) {
+        this.saldo -= valor;
     }
 
     @Override

@@ -24,11 +24,12 @@ public class GUI {
         contaDeMaria.depositar(1000D);
         contaDeMaria.sacar(1000D);
         contaDeMaria.transferir(1000D, contaDeJoao);
+        contaDeMaria.receber(1000D, contaDeJoao);
 
         panel.add(new PanelComp(contaDeMaria).getComponente());
 
         frame.add(panel);
-        frame.setSize(new Dimension(500, 500));
+        frame.setSize(new Dimension(1280, 720));
         frame.setVisible(true);
 
     }
