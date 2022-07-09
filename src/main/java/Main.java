@@ -27,8 +27,5 @@ public class Main {
 
         System.out.println("Depois das operações:");
         banco.getContas().forEach(Conta::imprimirExtrato);
-
-        System.out.println("Histórico das operações:");
-        banco.getContas().forEach(Conta::visualizarHistorico);
     }
 }
