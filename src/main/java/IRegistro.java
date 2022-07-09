@@ -1,6 +1,8 @@
+import javax.swing.*;
+
 public interface IRegistro {
 
     void verDetalhes();
 
-    String getStringIcon();
+    JComponent getIconComponent();
 }

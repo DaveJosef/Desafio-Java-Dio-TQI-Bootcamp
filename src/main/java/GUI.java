@@ -25,22 +25,7 @@ public class GUI {
         contaDeMaria.sacar(1000D);
         contaDeMaria.transferir(1000D, contaDeJoao);
 
-        Object[] registros = contaDeMaria.getHistorico().getRegistros()
-                .stream()
-                .map(registro -> registro.getStringIcon() + String.format("%.2f", registro.getValor()))
-                .collect(Collectors.toList())
-                .toArray();
-        JList lista = new JList(registros);
-
-        JPanel contaDeMariaComp = new JPanel();
-        JLabel nomeClienteComp = new JLabel(contaDeMaria.getNomeDoCliente());
-        nomeClienteComp.setFont(new Font("Arial", Font.BOLD, 22));
-        JLabel saldoClienteComp = new JLabel(String.format("%.2f", contaDeMaria.getSaldo()));
-        saldoClienteComp.setFont(new Font("Arial", Font.BOLD, 22));
-        contaDeMariaComp.add(nomeClienteComp, BorderLayout.CENTER);
-        contaDeMariaComp.add(saldoClienteComp, BorderLayout.CENTER);
-        panel.add(contaDeMariaComp);
-        panel.add(lista);
+        panel.add(new PanelComp(contaDeMaria).getComponente());
 
         frame.add(panel);
         frame.setSize(new Dimension(500, 500));
