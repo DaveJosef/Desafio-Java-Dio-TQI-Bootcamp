@@ -18,4 +18,9 @@ public class Transferencia extends Registro {
         System.out.println(String.format("Conta destino: %s", contaDestino.getNomeDoCliente()));
         super.verDetalhesComuns();
     }
+
+    @Override
+    public String getStringIcon() {
+        return " >> ";
+    }
 }

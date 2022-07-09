@@ -1,9 +1,12 @@
+import lombok.Getter;
+
 import java.util.LinkedList;
 import java.util.List;
 
 public class Historico {
 
-    List<Registro> registros;
+    @Getter
+    private List<Registro> registros;
 
     public Historico() {
         registros = new LinkedList<>();

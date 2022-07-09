@@ -11,4 +11,9 @@ public class Saque extends Registro {
         System.out.println(" -> Saque:");
         super.verDetalhesComuns();
     }
+
+    @Override
+    public String getStringIcon() {
+        return " -> ";
+    }
 }

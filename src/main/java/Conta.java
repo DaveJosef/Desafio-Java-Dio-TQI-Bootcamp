@@ -15,6 +15,7 @@ public abstract class Conta implements IConta {
     @Getter
     protected double saldo;
     protected Cliente cliente;
+    @Getter
     protected Historico historico;
 
     public Conta(Cliente cliente) {

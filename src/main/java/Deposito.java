@@ -11,4 +11,9 @@ public class Deposito extends Registro {
         System.out.println(" <- Depósito:");
         super.verDetalhesComuns();
     }
+
+    @Override
+    public String getStringIcon() {
+        return " <- ";
+    }
 }

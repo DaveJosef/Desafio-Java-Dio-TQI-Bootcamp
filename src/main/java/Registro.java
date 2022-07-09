@@ -1,8 +1,11 @@
+import lombok.Getter;
+
 import java.util.Date;
 
 public abstract class Registro implements IRegistro {
 
     private Date momento;
+    @Getter
     private double valor;
 
     public Registro(Date momento, double valor) {
